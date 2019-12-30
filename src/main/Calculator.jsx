@@ -37,10 +37,10 @@ export default class Calculator extends Component {
             const values = [...this.state.values]
             try {
                 values[0] = eval(`${values[0]} ${currentOperation} ${values[1]}`)
-            } catch(e) {
+            } catch (e) {
                 values[0] = this.state.values[0]
             }
-           
+
             values[1] = 0
 
             this.setState({
@@ -75,8 +75,6 @@ export default class Calculator extends Component {
 
 
     render() {
-        const addDigit = n => this.addDigit(n)
-        const setOperation = op => this.setOperation(op)
         return (
             <div className="calculator">
                 <Display value={this.state.displayValue} />
